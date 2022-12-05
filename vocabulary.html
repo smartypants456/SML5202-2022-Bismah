@@ -18,31 +18,3 @@ title: Vocabulary
 <hr>
 <p><a href="index.html">Home</a></p>
 <hr>
-
-<button id="html">Click me</button>
-<p id="demo"></p>
-
-<script>
-btn1.addEventListener("click", makeSentence);
-function makeSentence() {
-
-var person = {
-    names: [ "Bruno", "Betty", "Fiona", "Freddy", "Mini", "Marvin", "Alice", "Bob", "Jane", "Arthur", "Vincent", "Amy", "er", "sie" ],
-    verbs: [ "sprechen", "essen", "laufen", "spazieren", "trinken" ],
-    adverbs: ["langsam", "schnell", "nett", "laut", "viel", "ein bisschen", "selten" ]
-   
-};
-  
-var i;
-var text = "";
-for (i = 0; i < person.names.length; i++) {
-
-  name = person.names[i];
-  verb = person.verbs[Math.floor(Math.random() * person.verbs.length)];
-  adv = person.adverbs[Math.floor(Math.random() * person.adverbs.length)]; 
-  text += name + " " + verb + " " + adv + "<br>";
-  document.getElementById("demo").innerHTML = text;
- }  
-}
-</script>
-Explanation
