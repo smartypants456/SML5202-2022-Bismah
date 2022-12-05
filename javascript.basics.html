@@ -1,0 +1,71 @@
+---
+layout: default
+title: JavaScript
+---
+
+<script>
+btn1.addEventListener("click", makeSentence);
+function makeSentence() {
+
+var person = {
+    names: [ "Bruno", "B", "Fiona", "Freddy", "Mini", "Marvin", "Alice", "Bob", "Jane", "Arthur", "Vincent", "Amy", "He", "She" ],
+    verbs: [ "speaks", "eats", "runs", "walks", "drinks" ],
+    adverbs: ["slowly", "quickly", "nicely", "noisily", "a lot", "a little", "rarely" ]
+   
+};
+  
+var i;
+var text = "";
+for (i = 0; i < person.names.length; i++) {
+
+  name = person.names[i];
+  verb = person.verbs[Math.floor(Math.random() * person.verbs.length)];
+  adv = person.adverbs[Math.floor(Math.random() * person.adverbs.length)]; 
+  text += name + " " + verb + " " + adv + "<br>";
+  document.getElementById("demo").innerHTML = text;
+ }  
+}
+</script>
+
+<p>Here are some German idioms for you to learn!</p>
+
+<button id="idiomBtn">See another idiom</button>
+<dl id="quote"></dl>
+
+<script>
+var idioms = [ 
+'Ich bin fix und fertig = i am exhausted.', 
+'Um den heißen Brei herumreden = to talk around the hot porridge.', 
+'Sich zum Affen machen = to make a fool of yourself.',    
+'Eine Extrawurst verlangen= Demand special treatment.',
+'Ich verstehe nur Bahnhof = I only understand train station.',
+'Dumm wie Bohnenstroh = Dumb as a bean straw/post.'
+];
+
+var examples = [
+'Example: <i>Nachdem ich meine Hausaufgaben erledigt hatte, bin ich fix und fertig.</i>', 
+'Example: <i>Rede nicht um den den heißen Brei herum.</i>', 
+'Example: <i>Mach dich nicht zum Affen!</i>',
+'Example: <i>Warum verlangst du immer eine Extrawurst?!</i>',
+'Example: <i>Ich verstehe nur Bahnhof. Kannst du nochmal erklären?</i>',
+'Example: <i>Die Kandidaten sind dumm wie Bohnenstoh.</i>'
+
+];
+
+var quoteNo;
+var idiomNo;
+idiomBtn.addEventListener("click", loadQuote);
+function loadQuote() {
+    idiomNo = Math.floor(Math.random() * (idioms.length));
+    if(idiomNo !== quoteNo) {
+    //alert(quotes[quoteNo]);
+    	document.getElementById("quote").innerHTML = "<dt>" + idioms[idiomNo] + "</dt>" + "<dd>" + examples[idiomNo] + "</dd>";
+   	quoteNo = idiomNo;
+    	return quoteNo;
+    	}
+    	else {
+    	loadQuote();
+    	}
+	}
+loadQuote();
+</script>
