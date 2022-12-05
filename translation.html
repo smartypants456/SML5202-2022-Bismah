@@ -14,3 +14,98 @@ title: Translation
 <hr>
 <p><a href="index.html">Home</a></p>
 <hr>
+
+<p>Here are some German idioms for you to learn!</p>
+
+<button id="idiomBtn">See another idiom</button>
+<dl id="quote"></dl>
+
+<script>
+var idioms = [ 
+'Ich bin fix und fertig = i am exhausted.', 
+'Um den heißen Brei herumreden = to talk around the hot porridge.', 
+'Sich zum Affen machen = to make a fool of yourself.',    
+'Eine Extrawurst verlangen= Demand special treatment.',
+'Ich verstehe nur Bahnhof = I only understand train station.',
+'Dumm wie Bohnenstroh = Dumb as a bean straw/post.'
+];
+
+var examples = [
+'Example: <i>Nachdem ich meine Hausaufgaben erledigt hatte, bin ich fix und fertig.</i>', 
+'Example: <i>Rede nicht um den den heißen Brei herum.</i>', 
+'Example: <i>Mach dich nicht zum Affen!</i>',
+'Example: <i>Warum verlangst du immer eine Extrawurst?!</i>',
+'Example: <i>Ich verstehe nur Bahnhof. Kannst du nochmal erklären?</i>',
+'Example: <i>Die Kandidaten sind dumm wie Bohnenstoh.</i>'
+
+];
+
+var quoteNo;
+var idiomNo;
+idiomBtn.addEventListener("click", loadQuote);
+function loadQuote() {
+    idiomNo = Math.floor(Math.random() * (idioms.length));
+    if(idiomNo !== quoteNo) {
+    //alert(quotes[quoteNo]);
+    	document.getElementById("quote").innerHTML = "<dt>" + idioms[idiomNo] + "</dt>" + "<dd>" + examples[idiomNo] + "</dd>";
+   	quoteNo = idiomNo;
+    	return quoteNo;
+    	}
+    	else {
+    	loadQuote();
+    	}
+	}
+loadQuote();
+</script>
+
+
+<!--START OUTER DIV TO WRAP PAGE TEXT CONTENT AND SET IT NOT TO TRANSLATE -->
+<div class="notranslate">  
+<h1>Translation Example</h1>
+<p>This page contains a customised version of Google Translate, for you to translate items you wish to.</p>
+<p>Enter your phrase and choose a language:</p>
+
+<!-- SET UP TRANSLATION FIELDS IN TWO COLUMNS: TEXTAREA (transInput) IN LEFT COL; OUTPUT (transOutput) IN paragraph in RIGHT COL -->
+  <div class="row">
+  <div class="col-sm-6 p-3 bg-light text-white">
+     <div id="google_translate_element"></div>
+      <textarea rows="3" id="transInput" style="width:100%;"></textarea>
+     </div>
+  <div class="col-sm-6 p-3 bg-light text-black translate">
+    <h4 class="notranslate">Translation:</h4>
+    <p id="transOutput" style="font-size:120%;"></p>
+  </div>
+</div>
+<!-- END TRANSLATION FIELDS AREA -->
+</div>
+<!--END OUTER DIV-->
+
+<!-- SCRIPTS -->
+<!-- SCRIPT 1: FUNCTIONS TO GET TEXT FROM INPUT TEXT AND DISPLAY AS OUTPUT TEXT TRANSLATED. THEN CALL TO GOOGLE TRANSLATE BUTTON HANDLER -->
+
+<script>
+var x = document.getElementById("google_translate_element");
+x.addEventListener("click", myTrans);
+ 
+function myTrans() {
+  let myPhrase = document.getElementById("transInput").value;
+  document.getElementById('transOutput').innerHTML = myPhrase;
+  document.getElementsByTagName("title")[0].setAttribute("class", "notranslate");
+}
+ 
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ includedLanguages: 'fr,es', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+</script>
+
+<!-- SCRIPT 2: LINK TO GOOGLE TRANSLATION FUNCTION SCRIPT  -->
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- SCRIPT 3: FUNCTION TO ENSURE PAGE TITLE IN BROWSER TAB DOES NOT TRANSLATE WHEN PAGE LOADS -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.getElementsByTagName("title")[0].setAttribute("class", "notranslate");
+  });
+</script>
