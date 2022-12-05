@@ -1,12 +1,14 @@
 ---
-
+layout: default
+title: JavaScript
+---
 
 <script>
 btn1.addEventListener("click", makeSentence);
 function makeSentence() {
 
 var person = {
-    names: [ "Brian", "Betty", "Fiona", "Freddy", "Mini", "Marvin", "Alice", "Bob", "Jane", "Arthur", "Vincent", "Amy", "He", "She" ],
+    names: [ "Bruno", "B", "Fiona", "Freddy", "Mini", "Marvin", "Alice", "Bob", "Jane", "Arthur", "Vincent", "Amy", "He", "She" ],
     verbs: [ "speaks", "eats", "runs", "walks", "drinks" ],
     adverbs: ["slowly", "quickly", "nicely", "noisily", "a lot", "a little", "rarely" ]
    
