@@ -55,8 +55,6 @@ box-sizing: border-box;
     background-color: #292929;
 }
 
-
-
 .icon:hover {
     background-color: #1f1f1f;
 }
@@ -74,146 +72,73 @@ box-sizing: border-box;
     background-color: white;
 }
 
-
-
 .resultItem {
-
     opacity: 0;
-
     margin-bottom: 20px;
-
     animation: show 0.5s forwards ease-in-out;
-
     color: #292929;
-
     border-radius: 2px;
-
     padding: 10px;
-
     width: 100%;
-
 }
-
-
-
-
 
 .resultItem:hover {
-
     background-color: aliceblue;
-
 }
-
-
 
 .resultItem-title {
-
     margin-bottom: 4px;
-
 }
-
-
 
 .resultItem-title a {
-
     color: black;
-
     text-decoration: none;
-
 }
-
-
 
 .resultItem-title a:hover {
-
     text-decoration: underline;
-
 }
-
-
 
 .resultItem-snippet,
-
 .resultItem-link {
-
     color: darkSlateGray;
-
     font-size: 13px;
-
 }
-
-
 
 @keyframes show {
-
     0% {
-
         opacity: 0;
-
         transform: translateY(100px);
-
     }
-
-
 
     100% {
-
         opacity: 1;
-
         transform: translateY(0);
-
     }
-
 }
-
-
-
 
 
 @media screen and (max-width: 750px) {
-
     .searchForm-container {
-
         padding: 20px 0 20px;
-
         height: auto;
-
         justify-content: space-between;
-
         flex-direction: column;
-
     }
-
-
 
     .searchForm {
-
         margin: 20px auto 0;
-
     }
-
-
 
     .searchForm-input {
-
         width: 300px;
-
     }
-
-
 
     .searchResults {
-
         width: 388px;
-
         margin-left: auto;
-
         margin-right: auto;
-
     }
-
 }
-
-
 
 /* End Wikipedia Search Styles */
