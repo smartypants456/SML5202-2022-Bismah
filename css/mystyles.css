@@ -142,3 +142,18 @@ box-sizing: border-box;
 }
 
 /* End Wikipedia Search Styles */
+
+.footer {
+    background-color: #0e146f;
+    color: white;
+    font-size:90%;
+}
+
+.footer a {
+  color: #cbd5e8;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;	
+}
