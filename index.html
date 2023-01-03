@@ -52,34 +52,7 @@ title: home
   </div>
   <div class="column" style="background-color:yellow;">
     <h2>Random word generator</h2>
-    ><button id="idiomBtn">See another idiom</button>
-<dl id="quote"></dl>
-    <script>
-btn1.addEventListener("click", makeSentence);
-function makeSentence() {
-
-var person = {
-    names: [ "Betty", "Ana", "Fritz", "Alex", "Felix", "Heidi", "Ingrid", "Heinz", "Jane", "Maria", "Klaus", "Greta", "Er", "sie" ],
-    verbs: [ "spricht", "isst", "läuft", "geht", "trinkt" ],
-    adverbs: ["langsam", "schnell", "schön", "geräuschvoll", "viel", "ein wenig", "selten" ]
-   
-};
-  
-var i;
-var text = "";
-for (i = 0; i < person.names.length; i++) {
-
-  name = person.names[i];
-  verb = person.verbs[Math.floor(Math.random() * person.verbs.length)];
-  adv = person.adverbs[Math.floor(Math.random() * person.adverbs.length)]; 
-  text += name + " " + verb + " " + adv + "<br>";
-  document.getElementById("demo").innerHTML = text;
- }  
-}
-</script>
-  </div>
-</div>
-</body>
+    
     
 
 video!!!!
