@@ -25,7 +25,7 @@ title: home
   float: left;
   width: 33.33%;
   padding: 10px;
-  height: 500px; /* Should be removed. Only for demonstration */
+  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -41,18 +41,40 @@ title: home
 <h2>What does this site involve?</h2>
 <p>It's important to know about the aims and target audience for this site bfore you continue!</p>
 <div class="row">
-  <div class="column" style="background-color:aqua;">
+  <div class="column" style="background-color:black;">
     <h2>Who is this site aimed at?</h2>
     <p>This site is aimed at students who are beginners of the German language. No prior knowledge of German is required.
        This site may also be used to benefit anyone who wishes to study or visit Germany so that they are able to adapt quickly. It can also be used by students who wish to refresh their memory on German by using the games and tests.</p>
   </div>
-  <div class="column" style="background-color:pink;">
+  <div class="column" style="background-color:red;">
     <h2>Why learn German?</h2>
     <p>There are many reasons for why you should learn German. Some of which include: increased job oppurtunities, gaining transferable skills, language of influencers such as Einstein, top 10 spoken anguages of the world!</p>
   </div>
   <div class="column" style="background-color:yellow;">
     <h2>Random word generator</h2>
-    <p>...</p>
+    <script>
+btn1.addEventListener("click", makeSentence);
+function makeSentence() {
+
+var person = {
+    names: [ "Betty", "Ana", "Fritz", "Alex", "Felix", "Heidi", "Ingrid", "Heinz", "Jane", "Maria", "Klaus", "Greta", "Er", "sie" ],
+    verbs: [ "spricht", "isst", "läuft", "geht", "trinkt" ],
+    adverbs: ["langsam", "schnell", "schön", "geräuschvoll", "viel", "ein wenig", "selten" ]
+   
+};
+  
+var i;
+var text = "";
+for (i = 0; i < person.names.length; i++) {
+
+  name = person.names[i];
+  verb = person.verbs[Math.floor(Math.random() * person.verbs.length)];
+  adv = person.adverbs[Math.floor(Math.random() * person.adverbs.length)]; 
+  text += name + " " + verb + " " + adv + "<br>";
+  document.getElementById("demo").innerHTML = text;
+ }  
+}
+</script>
   </div>
 </div>
 
