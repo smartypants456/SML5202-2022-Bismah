@@ -286,6 +286,37 @@ function googleTranslateElementInit() {
 </script>
 
 
+
+
+
+<script>
+btn1.addEventListener("click", makeSentence);
+function makeSentence() {
+
+var person = {
+    names: [ "Betty", "Ana", "Fritz", "Alex", "Felix", "Heidi", "Ingrid", "Heinz", "Jane", "Maria", "Klaus", "Greta", "Er", "sie" ],
+    verbs: [ "spricht", "isst", "läuft", "geht", "trinkt" ],
+    adverbs: ["langsam", "schnell", "schön", "geräuschvoll", "viel", "ein wenig", "selten" ]
+   
+};
+  
+var i;
+var text = "";
+for (i = 0; i < person.names.length; i++) {
+
+  name = person.names[i];
+  verb = person.verbs[Math.floor(Math.random() * person.verbs.length)];
+  adv = person.adverbs[Math.floor(Math.random() * person.adverbs.length)]; 
+  text += name + " " + verb + " " + adv + "<br>";
+  document.getElementById("demo").innerHTML = text;
+ }  
+}
+</script>
+  </div>
+</div>
+</body>
+
+
 <p><b>Summary:</b> This page has taught you A1/A2 vocabulary and the exercises should have allowed you to become more confident with native phrases. This will support you when having conversations with native Germans or even for when you are visiting Germany.</p>
 <p>Click<a href="https://smartypants456.github.io/SML5202-2022-Bismah/pronunciation.html"> here</a> to move onto the pronunciation page.</p>
 
